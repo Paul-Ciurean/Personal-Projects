@@ -1,4 +1,4 @@
-# Tutorial-S3-with-CICD
+# Project 4 - CICD for Website
 
 # Automated Static Website Deployment with GitHub, S3, CodePipeline, and Lambda
 

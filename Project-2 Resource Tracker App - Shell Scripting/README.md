@@ -1,4 +1,4 @@
-# DevOps-Project-2
+# Project 2 - Resource Tracker App
 
 # Create a Resource Tracker App using Shell scripts
 

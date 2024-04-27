@@ -1,4 +1,4 @@
-# P3-Ansible
+# Project 3 - Ansible
 
 # Develops Ansible skills by doing hands-on with Ansible
 
