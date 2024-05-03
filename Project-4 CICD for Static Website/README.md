@@ -2,7 +2,7 @@
 
 # Automated Static Website Deployment with GitHub, S3, CodePipeline, and Lambda
 
-# !!! For the tutorial, check the "Tutorial" PDF !!!
+# !!! For the tutorial, check the "Guide" !!!
 
 ## Welcome to our automated static website deployment project! Leveraging the power of GitHub, S3, CodePipeline, and Lambda, we've streamlined the process of deploying and updating static websites with ease.
 
