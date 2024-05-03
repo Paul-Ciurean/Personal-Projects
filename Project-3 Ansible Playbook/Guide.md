@@ -26,7 +26,7 @@
 
 ### PS: For this step you will need 2 servers, you can launch them in AWS.
 
-![servers](/images/step1/ec2.png)
+![servers](/Project-3%20Ansible%20Playbook/images/step1/ec2.png)
 
 ## 1.1: Run the following commands to install Ansible:
 
@@ -38,7 +38,7 @@
 
 `ansible --version`
 
-![version](/images/step1/ansible-version.png)
+![version](/Project-3%20Ansible%20Playbook/images/step1/ansible-version.png)
 
 ## 1.2: Create an inventory file:
 
@@ -46,7 +46,7 @@
 
 ### In this file you will add the IP address from the targer server.
 
-![webserver](/images/step1/webserver.png)
+![webserver](/Project-3%20Ansible%20Playbook/images/step1/webserver.png)
 
 ### Save and quit.
 
@@ -58,7 +58,7 @@
 
 ### This will generate a key, you can hit Enter on all the steps.
 
-![ansible-key](/images/step1/key-gen.png)
+![ansible-key](/Project-3%20Ansible%20Playbook/images/step1/key-gen.png)
 
 ## 1.4: We need to copy the public key from Ansible server to the Target server. 
 
@@ -68,7 +68,7 @@
 
 ### This will open the public file. 
 
-![pub-key](/images/step1/pub-file.png)
+![pub-key](/Project-3%20Ansible%20Playbook/images/step1/pub-file.png)
 
 ### Go to the Target server and check what files you have inside by running:
 
@@ -80,7 +80,7 @@
 
 ### Paste the key from the Ansible public key here. It should look like this:
 
-![pub-key-to-target-sv](/images/step1/target-sv-paste-key.png)
+![pub-key-to-target-sv](/Project-3%20Ansible%20Playbook/images/step1/target-sv-paste-key.png)
 
 ### You might find another key there, make sure you have some space between the 2 keys.
 
@@ -90,7 +90,7 @@
 
 `ansible -m ping -i inventory all`
 
-![connection-success](/images/step1/connection-success.png)
+![connection-success](/Project-3%20Ansible%20Playbook/images/step1/connection-success.png)
 
 ## 1.6: Writing your first playbook:
 
@@ -98,7 +98,7 @@
 
 ` sudo systemctl status nginx`
 
-![nginx-status](/images/step1/nginx-status1.png)
+![nginx-status](/Project-3%20Ansible%20Playbook/images/step1/nginx-status1.png)
 
 ### Let's put Ansible to work. Create your first playbook using a text editor:
 
@@ -134,7 +134,7 @@
 - Become: This will run the commands as root
 - Tasks: The tasks the server needs to do to install Nginx
 
-![first-playbook](/images/step1/first-playbook.png)
+![first-playbook](/Project-3%20Ansible%20Playbook/images/step1/first-playbook.png)
 
 ### Save and quit.
 
@@ -142,7 +142,7 @@
 
 ` ansible-playbook -i inventory my_first_playbook.yml`
 
-![first-playbook-output](/images/step1/first-playbook-output.png)
+![first-playbook-output](/Project-3%20Ansible%20Playbook/images/step1/first-playbook-output.png)
 
 ## WELL DONE!
 
@@ -152,6 +152,6 @@
 
 ` sudo systemctl status nginx `
 
-![nginx-status](/images/step1/nginx-status2.png)
+![nginx-status](/Project-3%20Ansible%20Playbook/images/step1/nginx-status2.png)
 
 # THE END!! :D
