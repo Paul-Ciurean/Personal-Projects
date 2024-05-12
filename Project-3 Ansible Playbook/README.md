@@ -1,5 +1,7 @@
 # Project 3 - Ansible
 
+![project img](/Project-3%20Ansible%20Playbook/images/ansible.png)
+
 # Develops Ansible skills by doing hands-on with Ansible
 
 ## Welcome to Ansible Project! In this beginner-friendly project, we introduce Ansible, an open-source automation tool that simplifies server, application, and infrastructure management.
@@ -12,4 +14,3 @@
 
 ## By completing Ansible Project, you lay the groundwork for future automation endeavors, equipped with essential Ansible knowledge and skills.
 
-![project img](/Project-3%20Ansible%20Playbook/images/ansible.png)

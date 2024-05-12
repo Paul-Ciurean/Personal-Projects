@@ -1,5 +1,7 @@
 # Project 4 - CICD for Website
 
+![Project image](/Project-4%20CICD%20for%20Static%20Website/CICD.png)
+
 # Automated Static Website Deployment with GitHub, S3, CodePipeline, and Lambda
 
 # !!! For the tutorial, check the "Guide" !!!
@@ -14,4 +16,3 @@
 
 ## Join us in embracing automation and simplifying the deployment process for your static websites with GitHub, S3, CodePipeline, and Lambda.
 
-![Project image](/Project-4%20CICD%20for%20Static%20Website/CICD.png)
