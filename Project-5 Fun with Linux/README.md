@@ -8,5 +8,5 @@
 
 ## Below are the architectures on what you will have to build in this project.
 
-![users](/Project-6%20Fun%20with%20Linux/pics/users-architecture.png)
-![files and folders](/Project-6%20Fun%20with%20Linux/pics/folders-and-files-architecture.png)
+![users](/Project-5%20Fun%20with%20Linux/pics/users-architecture.png)
+![files and folders](/Project-5%20Fun%20with%20Linux/pics/folders-and-files-architecture.png)

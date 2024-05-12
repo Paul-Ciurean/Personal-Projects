@@ -26,7 +26,7 @@ passwd user3
 cat /etc/passwd
 ```
 
-![user-creation](/Project-6%20Fun%20with%20Linux/pics/user-list.png)
+![user-creation](/Project-5%20Fun%20with%20Linux/pics/user-list.png)
 
 2. Create Groups – devops, aws
 
@@ -35,7 +35,7 @@ groupadd devops
 groupadd aws
 cat /etc/group
 ```
-![group-list](/Project-6%20Fun%20with%20Linux/pics/groups-list.png)
+![group-list](/Project-5%20Fun%20with%20Linux/pics/groups-list.png)
 
 
 3. Change primary group of user2, user3 to ‘devops’ group
@@ -49,7 +49,7 @@ id user2
 id user3
 ```
 
-![users-id](/Project-6%20Fun%20with%20Linux/pics/users-id.png)
+![users-id](/Project-5%20Fun%20with%20Linux/pics/users-id.png)
 
 4. Add ‘aws’ group as secondary group to the ‘user1’
 
@@ -57,7 +57,7 @@ id user3
 usermod -aG aws user1
 id user1
 ```
-![group-add](/Project-6%20Fun%20with%20Linux/pics/user-add-group.png)
+![group-add](/Project-5%20Fun%20with%20Linux/pics/user-add-group.png)
 
 5. Create the file and directory structure shown in the above diagram. For this, I suggest installing `tree` on your instance so you can see the structure of all dirs and files.
 
@@ -70,7 +70,7 @@ touch dir1/f1 dir2/dir1/dir2/f3 dir4/dir12/f5 dir4/dir12/f4 dir7/f3 f1 f2 opt/di
 
 tree
 ```
-![dir-structure](/Project-6%20Fun%20with%20Linux/pics/dir-structure.png)
+![dir-structure](/Project-5%20Fun%20with%20Linux/pics/dir-structure.png)
 
 
 6. Change group of /dir1, /dir7/dir10, /f2 to “devops” group.  (Use `ll` to see the ownership of the dir/file)
@@ -79,7 +79,7 @@ tree
 ll
 ```
 
-![dir-owners](/Project-6%20Fun%20with%20Linux/pics/dir-groups.png)
+![dir-owners](/Project-5%20Fun%20with%20Linux/pics/dir-groups.png)
 
 ```
 chgrp devops dir1
@@ -89,7 +89,7 @@ chgrp devops f2
 ll
 ```
 
-![new-dir-owner](/Project-6%20Fun%20with%20Linux/pics/new-dir-groups.png)
+![new-dir-owner](/Project-5%20Fun%20with%20Linux/pics/new-dir-groups.png)
 
 7. Change ownership of /dir1, /dir7/dir10, /f2 to “user1” user.
 
@@ -101,7 +101,7 @@ chown devops f2
 ll
 ```
 
-![new-dir-own](/Project-6%20Fun%20with%20Linux/pics/new-dir-own.png)
+![new-dir-own](/Project-5%20Fun%20with%20Linux/pics/new-dir-own.png)
 
 ## Step 2: Login as user1 and perform below:
 
@@ -123,7 +123,7 @@ sudo passwd user4
 sudo passwd user5
 cat /etc/passwd
 ```
-![new-users](/Project-6%20Fun%20with%20Linux/pics/new-users.png)
+![new-users](/Project-5%20Fun%20with%20Linux/pics/new-users.png)
 
 2. Create Groups – app, database
 
@@ -132,7 +132,7 @@ sudo groupadd app
 sudo groupadd database
 cat /etc/group
 ```
-![new-groups](/Project-6%20Fun%20with%20Linux/pics/new-groups.png)
+![new-groups](/Project-5%20Fun%20with%20Linux/pics/new-groups.png)
 
 
 ## Step 3:  Login as ‘user4’ and perform below: 
@@ -167,7 +167,7 @@ sudo mv /root/dir1/f1 /root/dir2/dir1/dir2
 sudo mv /root/f2 /root/f4
 ```
 
-![user4-tasks](/Project-6%20Fun%20with%20Linux/pics/user4-tasks.png)
+![user4-tasks](/Project-5%20Fun%20with%20Linux/pics/user4-tasks.png)
 
 ## Step 4: Login as ‘user1’ and perform below: 
 
@@ -213,7 +213,7 @@ sudo find /root/opt/dir14 -mindepth 1 -delete
 sudo vi /root/f3
 ```
 
-![user1-tasks](/Project-6%20Fun%20with%20Linux/pics/user1-tasks.png)
+![user1-tasks](/Project-5%20Fun%20with%20Linux/pics/user1-tasks.png)
 
 ## Step 5: Login as ‘user2’ and perform below: 
 
@@ -268,7 +268,7 @@ sudo vi /root/f3
 sudo rm /root/f3
 ```
 
-![user2-tasks](/Project-6%20Fun%20with%20Linux/pics/user2-tasks.png)
+![user2-tasks](/Project-5%20Fun%20with%20Linux/pics/user2-tasks.png)
 
 ## Step 6: Login as ‘root’ user and perform below: 
 
@@ -320,7 +320,7 @@ df -h'
 touch /mnt/data/f1
 ```
 
-![mount-ebs](/Project-6%20Fun%20with%20Linux/pics/mount-ebs.png)
+![mount-ebs](/Project-5%20Fun%20with%20Linux/pics/mount-ebs.png)
 
 ## Step 9: Login as ‘user5’ and perform below: 
 
@@ -368,7 +368,7 @@ sudo rm -r /root/f1 /root/f4
 sudo rm -r /root/opt/dir14
 ```
 
-![skinny-tree](/Project-6%20Fun%20with%20Linux/pics/skinny-tree.png)
+![skinny-tree](/Project-5%20Fun%20with%20Linux/pics/skinny-tree.png)
 
 ## Step 10: Logins as ‘root’ user and perform below: 
 
@@ -383,7 +383,7 @@ sudo userdel -f user5
 
 cat /etc/passwd
 ```
-![no-users](/Project-6%20Fun%20with%20Linux/pics/no-users.png)
+![no-users](/Project-5%20Fun%20with%20Linux/pics/no-users.png)
 
 2. Delete groups – app, aws, database, devops. 
 
@@ -414,7 +414,7 @@ sudo umount /mnt/data
 sudo rm -r /mnt/data
 ```
 
-![unmount-ebs](/Project-6%20Fun%20with%20Linux/pics/unmount-ebs.png)
+![unmount-ebs](/Project-5%20Fun%20with%20Linux/pics/unmount-ebs.png)
 
 ## Step 11: Login to AWS and detach EBS volume to the EC2 Instance and delete the volume and then terminate EC2 instance.
 
