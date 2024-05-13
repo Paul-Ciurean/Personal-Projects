@@ -1,6 +1,6 @@
 # Project 2 - Resource Tracker App
 
-![project img](/Project-2%20Resource%20Tracker%20App%20-%20Shell%20Scripting/images/monitoring-app.png)
+![project img](/Project-2-Resource-Tracker-App-Shell-Scripting/images/monitoring-app.png)
 
 # Create a Resource Tracker App using Shell scripts
 

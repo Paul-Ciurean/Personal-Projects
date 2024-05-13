@@ -5,4 +5,4 @@
 ## You can also find docs about python.
 
 
-![project img](/Project-5%20Python%20Exercises/python.png)
+![project img](/Python-Exercises/python.png)

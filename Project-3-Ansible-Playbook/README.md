@@ -1,6 +1,6 @@
 # Project 3 - Ansible
 
-![project img](/Project-3%20Ansible%20Playbook/images/ansible.png)
+![project img](/Project-3-Ansible-Playbook/images/ansible.png)
 
 # Develops Ansible skills by doing hands-on with Ansible
 
