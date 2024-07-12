@@ -1,0 +1,44 @@
+name: Pull from Docker Hub and Push to ECR
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: <region>
+
+      - name: Log in to Amazon ECR
+        run: aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <account-number>.dkr.ecr.<region>.amazonaws.com
+
+      - name: Pull Docker image from Docker Hub
+        run: |
+          docker pull wordpress:latest
+
+      - name: Tag and push Docker image to ECR
+        env:
+          ECR_REPOSITORY: wordpress-repo
+          IMAGE_TAG: wordpress
+        run: |
+          # Tag the Docker image
+          docker tag wordpress:latest <account-number>.dkr.ecr.<region>.amazonaws.com/wordpress-repo:wordpress
+
+          # Push the Docker image to ECR
+          docker push <account-number>.dkr.ecr.<region>.amazonaws.com/wordpress-repo:wordpress
+
+      - name: Register the task definition
+        run: |
+          # aws ecs register-task-definition --cli-input-json file://task-definition.json --region <region>
+          
