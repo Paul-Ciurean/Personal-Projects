@@ -2,7 +2,7 @@
 
 ![Docker](/Project-7-Docker/pics/Docker.png)
 
-## Overview
+## Overview:
 ### This project involves creating and deploying a website using **Docker**, **Amazon Elastic Container Registry** (ECR), **Amazon Elastic Container Service** (ECS), **Application Load Balancer** (ALB), and **Route 53**. The process includes pulling a Docker image, modifying it, and committing the changes. The website is run on a Docker container and made accessible via the localhost. The final Docker image is pushed to Amazon ECR and deployed using ECS with an ALB to manage traffic and Route 53 to handle domain name resolution. This setup ensures the website is accessible globally.
 
 ## Use Cases
