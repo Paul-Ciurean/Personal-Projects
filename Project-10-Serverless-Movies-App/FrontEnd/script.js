@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', fetchAvailableMovies);
 
 function fetchAvailableMovies() {
-    fetch(' HERE GOES THE API FROM UPDATE API ') 
+    fetch('https://19yopdptke.execute-api.eu-west-2.amazonaws.com/update_api/update_api') 
         .then(response => response.json())
         .then(data => {
             // Log the data to see the structure
@@ -23,7 +23,7 @@ document.getElementById('search-btn').addEventListener('click', searchMovie);
 function searchMovie() {
     const movieName = document.getElementById('movie-id-input').value;
     if (movieName) {
-        fetch(`HERE GOES THE API FROM SEARCH API?movieName=${movieName}`)
+        fetch(`https://6fnu97pbz0.execute-api.eu-west-2.amazonaws.com/search_api/search_api?movieName=${movieName}`)
             .then(response => response.json())
             .then(data => {
                 const tableBody = document.getElementById('table-body');
