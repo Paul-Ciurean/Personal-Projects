@@ -8,30 +8,30 @@
 ### 1. I opened command prompt and ran `WSL` (I'm on a windows machine, if you have Linux or MacOS you don't have to do this) so I can run any Linux commands in the terminal.
 ### TIP: I recommend to use `export PROMPT_DIRTRIM=1` to make a shorter path so it will go from `/mnt/c/Users/paul_/OneDrive/Desktop/docker-test` to `/docker-test`
 
-![start](/Project-7-Docker/pics/start.png)
+![start](pics/start.png)
 
 ### 2. With the following commands I will check if I have any docker images or docker containers:
 
 `docker images` `docker ps -a`
 
-![empty-img-container](/Project-7-Docker/pics/empty-image-container.png)
+![empty-img-container](pics/empty-image-container.png)
 
 ### 3. Using the command `docker search <image>` I am looking for my image in Docker Hub.
 
-![search-image](/Project-7-Docker/pics/search.png)
+![search-image](pics/search.png)
 
 ### 4. I use `docker pull paulciurean/paul_tech:1.0` to pull the image from Docker Hub on my local machine.
 
-![pull-request](/Project-7-Docker/pics/pull-image.png)
+![pull-request](pics/pull-image.png)
 
 ### 5. I check to see if I've got the image with `docker images` and run a container using that image. To do that I use `docker run -d --name paul_website -p 80:80 paulciurean/paul_tech:1.0`
 
-![run-container](/Project-7-Docker/pics/run-container.png)
+![run-container](pics/run-container.png)
 
 ### 6. Open a new browser and run `localhost:80` to see the Super Website.
 ### Note: If you want to create another container, you need to give it a different port range(e.g: 81:80) because you can not have 2 containers running on the same port.
 
-![super-website](/Project-7-Docker/pics/super-website.png)
+![super-website](pics/super-website.png)
 
 ### You can stop here and play around with the above commands, try to create different websites or you can follow the guide til the end. 
 
@@ -40,42 +40,42 @@
 ### 1. Connect to the container using `docker exec -it <name> /bin/bash`. I'll check what files we have here and what I want to change.
 ### Note: You can use either Container ID or the name of the container here. In the image below you will see me using the Container ID
 
-![connect-to-container](/Project-7-Docker/pics/connect-to-container.png)
+![connect-to-container](pics/connect-to-container.png)
 
 ### 2. Exit the container with `exit` command, and copy the new picture for the new website. We do this by using `docker cp <new picture> <website-name>:/app/`
 ### I connect back to the container and check if I have the new picture where it has to be.
 
-![copy-new-img-to-container](/Project-7-Docker/pics/new-img.png)
+![copy-new-img-to-container](pics/new-img.png)
 
 ### 3. I ran into a problem, when trying to open `index.html` I can't because I don't have `VIM` installed on this container. To install it run `apt-get install vim`
 
-![vim-error](/Project-7-Docker/pics/vim-error.png)
+![vim-error](pics/vim-error.png)
 
 ### 4. I open the file `index.html` to modify the website.
 
-![index-file](/Project-7-Docker/pics/index-file.png)
+![index-file](pics/index-file.png)
 
 ### 5. I then create the image by using `docker commit <your-website> <your-repo:new-tag>` 
 ### You can check if you created the new docker images correctly.
 
-![commit-img](/Project-7-Docker/pics/commit-img.png)
+![commit-img](pics/commit-img.png)
 
 ### 6. In case your image doesn't have a name, you can use `docker tag` to change the name and tag for it, and with `docker push <new-image>` you can push it to the Docker Hub repo. 
 
-![docker-push](/Project-7-Docker/pics/docker-push.png)
+![docker-push](pics/docker-push.png)
 
 ### 7. Time to launch the new website :D 
 `docker run -d --name learning_website -p 81:80 paulciurean/paul_tech:1.2`
 
-![launch-new-website](/Project-7-Docker/pics/launch-new-website.png)
+![launch-new-website](pics/launch-new-website.png)
 
 ### 8. Open a new browser and run `localhost:81` to see the new website.
 
-![new-website](/Project-7-Docker/pics/new-website.png)
+![new-website](pics/new-website.png)
 
 ### 9. You can check that you have 2 different websites on 2 containers.
 
-![2-websites](/Project-7-Docker/pics/2-websites.png)
+![2-websites](pics/2-websites.png)
 
 ## Part 3: Now let's deploy it in AWS:
 
@@ -85,13 +85,13 @@
 
 `aws ecr create-repository --repository-name paul_tech --region us-east-1`
 
-![create-ecr](/Project-7-Docker/pics/create-ecr-in-aws.png)
+![create-ecr](pics/create-ecr-in-aws.png)
 
 ### 2. Authenticate Docker to the Amazon ECR registry:
 
 `aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <account-id>.dkr.ecr.us-east-1.amazonaws.com`
 
-![login-aws](/Project-7-Docker/pics/login-aws.png)
+![login-aws](pics/login-aws.png)
 
 ### 3. I will have to tag my docker image: 
 
@@ -101,13 +101,13 @@
 
 `docker push <account-id>.dkr.ecr.us-east-1.amazonaws.com/paul_tech:1.2`
 
-![push-img-ecr](/Project-7-Docker/pics/push-img-in-ecr.png)
+![push-img-ecr](pics/push-img-in-ecr.png)
 
 ### 5. Create the ECS cluster: 
 
 `aws ecs create-cluster --cluster-name my-cluster --region us-east-1`
 
-![create-ecs-cluster](/Project-7-Docker/pics/create-ecs-cluster.png)
+![create-ecs-cluster](pics/create-ecs-cluster.png)
 
 ### 6. Create a task definition:
 
@@ -140,7 +140,7 @@
 
 ```
 
-![create-task-def](/Project-7-Docker/pics/create-task-def.png)
+![create-task-def](pics/create-task-def.png)
 
 ### 7. Register the task definition:
 
@@ -164,7 +164,7 @@
 aws ecs create-service --cluster my-cluster --service-name my-service --task-definition my-task --desired-count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[<subnet-1>,<subnet-2>],securityGroups=[sg-089ba5e2081a09926],assignPublicIp=ENABLED}" --load-balancers '[{"targetGroupArn":"<target-group-id>","containerName":"my-container","containerPort":80}]' --region us-east-1
 ```
 
-![create-service](/Project-7-Docker/pics/create-service.png)
+![create-service](pics/create-service.png)
 
 ### You can stop here if you don't have a domain name. You can get the ALB DNS name and run it in a new browser, it will display the new website ran on ECS, which is accessible by everyone on internet.
 
@@ -174,7 +174,7 @@ aws ecs create-service --cluster my-cluster --service-name my-service --task-def
 
 ### 1. I will create a Route53 hosted zone:
 
-![change-batch](/Project-7-Docker/pics/change-batch.png)
+![change-batch](pics/change-batch.png)
 
 ```
 {
@@ -214,11 +214,11 @@ aws ecs create-service --cluster my-cluster --service-name my-service --task-def
 ### 2. Update the Route53 record:
 `aws route53 change-resource-record-sets --hosted-zone-id <your-hosted-zone> --change-batch file://change-batch.json`
 
-![create-records](/Project-7-Docker/pics/create-records.png)
+![create-records](pics/create-records.png)
 
 ## Now you can access your domain name (e.g.: digitalcloudadvisor.info) and you have full access to your website.
 
-![final-website](/Project-7-Docker/pics/final-website.png)
+![final-website](pics/final-website.png)
 
 
 ## You've reached the end of tutorial, if you want to discuss with me about this project, message me on [LinkedIn](https://www.linkedin.com/in/ciprian-paul-ciurean-80386424b/)

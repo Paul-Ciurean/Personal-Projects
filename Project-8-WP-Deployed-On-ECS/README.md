@@ -1,6 +1,6 @@
 # WordPress Deployed Using DevOps Principles
 
-![project-image](/Project-8-WP-Deployed-On-ECS/images/project-image.png)
+![project-image](images/project-image.png)
 
 ## Overview: 
 
@@ -97,10 +97,10 @@
 
 
 ## Here is the main page:
-![main-page](/Project-8-WP-Deployed-On-ECS/images/main-website.png)
+![main-page](images/main-website.png)
 
 ## Here is the admin page to customize the wrbsite:
-![admin-page](/Project-8-WP-Deployed-On-ECS/images/admin-website.png)
+![admin-page](images/admin-website.png)
 
 ## **Conclusion**
 

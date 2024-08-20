@@ -1,6 +1,6 @@
 # 3-Tier Web Application with Terraform
 
-![project-6](/Project-6-3-Tier-Web-App-Terraform/P6.png)
+![project-6](P6.png)
 
 ## **Overview:**
 

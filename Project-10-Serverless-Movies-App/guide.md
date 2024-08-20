@@ -20,11 +20,11 @@
 
 ## 5. In Route 53, click on `Hosted Zones`, `Domain Name` and click on `Hosted zone details`.
 
-![hosted-zone](/images/hosted-zone.png)
+![hosted-zone](images/hosted-zone.png)
 
 ## 6. In another tab, open `Registered Domains`, click on your domain, and under `Details`, click on `Actions` -> `Edit Name Servers`.
 
-![registry](/images/registered-domains.png)
+![registry](images/registered-domains.png)
 
 ## 7. From the `Domain Name` page, copy all the `Name Servers` listed under `Hosted Zone Details` to the `Edit Name Servers` section.
 
