@@ -1,6 +1,6 @@
 # Project 1 - LAMP Stack
 
-![project img](/Project-1-LAMP-Stack/images/lamp.png)
+![project img](images/lamp.png)
 
 ## Welcome to our dynamic web development project powered by the LAMP stack! LAMP, an acronym for Linux, Apache, MySQL, and PHP, forms the backbone of countless websites and web applications across the internet. In this project, we harness the power of these open-source technologies to create robust, scalable, and interactive web experiences.
 
