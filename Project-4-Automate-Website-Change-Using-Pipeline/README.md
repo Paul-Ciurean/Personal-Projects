@@ -1,6 +1,6 @@
 # Project 4 - CICD for Website
 
-![Project image](/Project-4-Automate-Website-Change-Using-Pipeline/CICD.png)
+![Project image](CICD.png)
 
 # Automated Static Website Deployment with GitHub, S3, CodePipeline, and Lambda
 
